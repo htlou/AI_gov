@@ -6,6 +6,7 @@ BIG-bench/
 tmpstore/
 data_ready/
 reannotate_by_Llama70b/
+raw_data/
 ##### Python.gitignore #####
 # Byte-compiled / optimized / DLL files
 __pycache__/
