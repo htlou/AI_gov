@@ -1,4 +1,4 @@
-# general python file for csv to json
+# General python file for csv to json
 
 import pandas as pd
 import glob
