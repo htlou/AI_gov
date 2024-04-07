@@ -137,7 +137,7 @@ for entry in final:
             action_object_pairs = split_actions(item)
             new_category_items.extend(action_object_pairs)
         output_extracted[category] = new_category_items
-    entry["output_extracted_new"] = output_extracted
+    entry["output_extracted"] = output_extracted
     final_new.append(entry)
 
 
