@@ -22,7 +22,7 @@ Small = [
     "汽车安保系统生产",
     "汽车安全装置生产",
     "多媒体装置生产",
-    "符合材料生产",
+    "复合材料生产",
     "健康环保装置生产",
     "模具生产",
     "汽车测试",
@@ -60,7 +60,7 @@ Small = [
     "仪表盘生产",
     "其他用电装置生产",
     "汽车销售",
-    "汽车配件",
+    "汽车配件生产",
     "汽车维修",
     "汽车检测与服务",
     "汽车配件销售",
@@ -69,7 +69,7 @@ Small = [
 ]
 
 input_file = Path("/data/hantao/cars/output_filtered.tmp_re_output.json").expanduser().absolute()
-output_file = Path("/data/hantao/cars/output_extracted_div.json").expanduser().absolute()
+output_file = Path("/data/hantao/cars/output_extracted_new.json").expanduser().absolute()
 
 with input_file.open(mode='rt', encoding='utf-8') as f:
     raw_inputs = json.load(f)
@@ -95,10 +95,52 @@ for raw_input in raw_inputs:
             categories["Extra"].extend(items)
     
     categories["Extra"] = list(set(categories["Extra"]))
-    if categories["Big"] or categories["Small"] or categories["Extra"]:
+    if categories["Big"]!=[] or categories["Small"]!=[] or categories["Extra"]!=[]:
         raw_input["output_extracted"] = categories
         final.append(raw_input)
 
+def split_actions(item):
+    # 先定义一系列可能的动作
+    actions = ["生产", "销售", "维修", "设计", "制造", "测试", "检测", "服务", "培训"]
+    pattern = '|'.join(actions)
+
+    # 尝试找到客体，它通常在字符串的开始
+    object_match = re.search(f'^(.*?)({pattern})', item)
+    if object_match:
+        shared_object = object_match.group(1).strip()  # 共享的客体，例如“汽车”
+    else:
+        shared_object = ""  # 如果没有匹配到，可能没有明确的客体
+
+    # 找到所有动作词的位置
+    matches = list(re.finditer(pattern, item))
+    results = []
+
+    for match in matches:
+        action = match.group(0)  # 动作词
+        # 确定动作词之后直至下一个动作词之前的部分作为客体（如果有）
+        start, end = match.end(), matches[matches.index(match) + 1].start() if matches.index(match) + 1 < len(matches) else None
+        specific_object = item[start:end].strip('与和') if end else item[start:].strip('与和')
+        # 如果这个动作没有明确的客体，则使用共享的客体
+        object_to_use = specific_object if specific_object else shared_object
+        results.append({"action": action, "object": object_to_use})
+
+    return results
+
+final_new = []
+# 假设final已经包含了解析好的分类数据
+for entry in final:
+    output_extracted = entry.get("output_extracted", {})
+    for category in ["Big", "Small", "Extra"]:
+        new_category_items = []
+        for item in output_extracted.get(category, []):
+            # 使用新的分割函数
+            action_object_pairs = split_actions(item)
+            new_category_items.extend(action_object_pairs)
+        output_extracted[category] = new_category_items
+    entry["output_extracted_new"] = output_extracted
+    final_new.append(entry)
+
+
 
 with output_file.open(mode='w', encoding='utf-8') as f:
-    json.dump(final, f, indent=4, ensure_ascii=False)
+    json.dump(final_new, f, indent=4, ensure_ascii=False)
