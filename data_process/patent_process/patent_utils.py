@@ -16,3 +16,10 @@ def get_output_file_name(original_file_name):
     print(f"Changed output file name:{filtered_file_name}")
 
     return filtered_file_name
+
+def is_chinese(s):
+    """检查字符串是否包含中文字符"""
+    for c in s:
+        if '\u4e00' <= c <= '\u9fff':
+            return True
+    return False

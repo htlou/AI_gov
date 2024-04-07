@@ -3,7 +3,7 @@
 import os
 import json
 from tqdm import tqdm
-from utils import get_output_file_name
+from data_process.patent_process.patent_utils import get_output_file_name
 
 # 指定目录路径
 input_directory = '/mntmodels/boyuan/learnspace/AI_gov/raw_data/research_data/patent_data_all/data_json'
@@ -15,7 +15,7 @@ required_keys = [
     '专利号', '专利名称', '专利类型', '申请日', '公开日', '授权日',
     '专利代理机构', '专利法律状态', '申请人类型', '主申请人名称',
     '主申请人地址', '主申请人地址国家', '累计被引用量', '主分类号',
-    '专利分类号', '专利分类号数量'
+    '专利分类号', '专利分类号数量','国民经济行业分类代码','国民经济行业分类名称'
 ]
 
 # 遍历目录中的所有文件

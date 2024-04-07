@@ -5,10 +5,11 @@ Since we have make too many data preprocessing files, it may be better to arrang
 
 ## Methods
 
+> **patent_analysis.ipynb**: analyzes the number of patents and R&D investment of enterprises, so as to analyze the innovation level of enterprises
 
 > **csv_to_json.py** : general python file for csv to json
 
-> **get_clean_patent.py** : filter the patent json data for necessary items, *e.g.*, 专利号，专利名称，专利类型，申请日，公开日，授权日，专利代理机构，专利法律状态，申请人类型，主申请人名称，主申请人地址，主申请人地址国家。累计被引用量，主分类号，专利分类号，专利分类号数量
+> **get_clean_patent.py** : filter the patent json data for necessary items, *e.g.*, 专利号，专利名称，专利类型，申请日，公开日，授权日，专利代理机构，专利法律状态，申请人类型，主申请人名称，主申请人地址，主申请人地址国家。累计被引用量，主分类号，专利分类号，专利分类号数量,国民经济行业分类代码,国民经济行业分类名称
 ## Hints
 
 The json data may be too long, you can check the data by jq command
