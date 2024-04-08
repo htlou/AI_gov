@@ -1,8 +1,11 @@
 # Basic Information
 
 > ./data_process: contains data preprocessing files
+
 > ./visualization: files for plotting knowledge graph and data analysis
+
 > ./annotation: standards and annotation files
+
 > ./assets: fancy visualization
 
 ## Hints
