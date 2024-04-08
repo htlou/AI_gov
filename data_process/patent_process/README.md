@@ -5,6 +5,7 @@ Since we have make too many data preprocessing files, it may be better to arrang
 
 ## Methods
 
+> **get_triple.ipynb**: get triple form
 > **patent_analysis.ipynb**: analyzes the number of patents and R&D investment of enterprises, so as to analyze the innovation level of enterprises
 
 > **csv_to_json.py** : general python file for csv to json
