@@ -274,7 +274,7 @@ $RECYCLE.BIN/
 *.lzma
 *.cab
 *.xar
-*.txt
+# *.txt
 
 # Packing-only formats
 *.iso
