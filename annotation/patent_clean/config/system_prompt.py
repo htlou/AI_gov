@@ -130,7 +130,7 @@ Following these standards, you will be able to effectively use your expertise as
 REASONING_SCORE_USER_PROMPT :str = 'Question:{question} Ground Truth:{gt} Response_A:{response_a} Response_B:{response_b} Your Judge:'
 
 SYSTEM_PROMPT: str = """
-你是一个汽车工业、数据标注和知识图谱建立的专家，接下来我会向你提供一个公司的全部产品，你的任务是从以下的大类和详细列表中分别中筛选出现过的产品并返回，以及额外返回列表之外的与汽车工业有关的产品。
+你是一个汽车工业、数据标注和知识图谱建立的专家，接下来我会给你提供一些专利，请你根据专利的名称判断它是否属于以下的相关类别。
 
 待筛查列表：
 
