@@ -1,10 +1,24 @@
 options(repos = c(CRAN = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
-install.packages("wordcloud2")
+# update.packages()
+install.packages(c("systemfonts", "RcppEigen"))
+install.packages("ggraph")
+# install.packages("igraph")
+# install.packages("tidyverse")
+# install.packages("viridis")
 library(wordcloud2) 
 library(packcircles)
 library(ggplot2)
 library(extrafont)
 library(showtext)
+library(ggraph)
+library(igraph)
+library(tidyverse)
+library(viridis)
+
+edges <- flare$edges
+vertices <- flare$vertices
+print(edges)
+print(vertices)
 
 font_import()
 loadfonts(device = "postscript")
