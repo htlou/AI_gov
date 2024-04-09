@@ -438,7 +438,5 @@ __MACOSX/
 ## large files
 *.csv
 *.tar.gz
-*.pdf
 *.cache/
 .cache/
-*.txt
