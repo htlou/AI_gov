@@ -69,4 +69,4 @@ p <- ggplot() +
 #   theme(axis.text.x = element_text(family = "PingFang SC",angle = 90, hjust = 1)) +
 #   guides(color = guide_legend(title = "类型"))
 
-ggsave("assets/bubble.pdf", plot = p, width = 10, height = 8)
+ggsave("../assets/bubble.pdf", plot = p, width = 10, height = 8)
