@@ -1,12 +1,14 @@
 # Basic Information
 
-> ./data_process: contains data preprocessing files
+> ./data_process: 数据处理及分析代码
 
-> ./visualization: files for plotting knowledge graph and data analysis
+> ./visualization: 可视化分析文件
 
-> ./annotation: standards and annotation files
+> ./annotation: 标注标准及文件
 
-> ./assets: fancy visualization
+> ./assets: 数据分析可视化
+
+> ./knowledge_graph__plot: 知识图谱绘制结果及相关源码
 
 ## Hints
 
