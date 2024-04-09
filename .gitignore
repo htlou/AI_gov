@@ -71,7 +71,7 @@ results/
 # Translations
 *.mo
 *.pot
-*.json
+# *.json
 
 # Django stuff:
 *.log
@@ -291,7 +291,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.txz
-*.json
+# *.json
 
 ##### Xcode.gitignore #####
 # Xcode
@@ -436,7 +436,7 @@ tags
 __MACOSX/
 
 ## large files
-*.csv
+# *.csv
 *.tar.gz
 # *.pdf
 *.cache/
