@@ -1,10 +1,24 @@
 options(repos = c(CRAN = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
-install.packages("wordcloud2")
+# update.packages()
+# install.packages(c("systemfonts", "RcppEigen"))
+# install.packages("ggraph")
+# install.packages("igraph")
+# install.packages("tidyverse")
+# install.packages("viridis")
 library(wordcloud2) 
 library(packcircles)
 library(ggplot2)
 library(extrafont)
 library(showtext)
+library(ggraph)
+library(igraph)
+library(tidyverse)
+library(viridis)
+
+edges <- flare$edges
+vertices <- flare$vertices
+print(edges)
+print(vertices)
 
 font_import()
 loadfonts(device = "postscript")
@@ -55,4 +69,4 @@ p <- ggplot() +
 #   theme(axis.text.x = element_text(family = "PingFang SC",angle = 90, hjust = 1)) +
 #   guides(color = guide_legend(title = "类型"))
 
-ggsave("assets/bubble.pdf", plot = p, width = 10, height = 8)
+ggsave("../assets/bubble.pdf", plot = p, width = 10, height = 8)
