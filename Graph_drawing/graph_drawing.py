@@ -2,9 +2,9 @@ from neo4j import GraphDatabase
 import csv
 
 # 连接到 Neo4j 数据库
-uri = "neo4j+s://3561541e.databases.neo4j.io"
+uri = ""
 username = "neo4j"
-password = "Jofh8ZFZBAvYaQMCw_HfHEXqUejC1b3c0dQM4rz0eYk"
+password = ""
 
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
