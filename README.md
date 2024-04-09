@@ -8,7 +8,7 @@
 
 > ./assets: 数据分析可视化
 
-> ./knowledge_graph__plot: 知识图谱绘制结果及相关源码
+> ./knowledge_graph__plot: 知识图谱绘制部分结果及相关源码，更多细节将在课上展示
 
 ## Hints
 
