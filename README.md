@@ -5,6 +5,9 @@
 > ./visualization: 可视化分析文件
 
 > ./annotation: 标注标准及文件
+- open-source_annotator.py: 本地模型标注脚本，使用vllm并行加速
+- GPT-4的调用参考htlou/gpt4_eval，我们使用了这个库的fork
+- system_prompt.py: 我们标注时的prompt
 
 > ./assets: 数据分析可视化
 
