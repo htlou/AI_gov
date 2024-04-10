@@ -1,4 +1,5 @@
 # A sample annotation script, wipe out infomation related to privacy
+# For GPT-4 eval, watch the htlou/gpt4_eval repo, we just used a fork of that repo
 
 import argparse
 from datasets import load_dataset , Dataset
