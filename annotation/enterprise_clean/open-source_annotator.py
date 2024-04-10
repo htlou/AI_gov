@@ -1,4 +1,4 @@
-# read python file from input filepath, and map them ,after which correct by llama2-70b
+# A sample annotation script, wipe out infomation related to privacy
 
 import argparse
 from datasets import load_dataset , Dataset
